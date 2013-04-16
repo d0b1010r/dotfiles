@@ -4,6 +4,8 @@
 	interactive = auto
 	status = auto
 	ui = auto
+[core]
+	excludesfile = ~/.gitignore
 [alias]
 	st = status
 	ci = commit
