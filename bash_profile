@@ -24,4 +24,13 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # aliases
 alias ll="ls -al"
 
+# replace cd with pushd
+function cd {
+    if (("$#" > 0)); then
+        pushd "$@" > /dev/null
+    else
+        cd $HOME
+    fi
+}
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
