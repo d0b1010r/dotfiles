@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#source ~/.git-completion.bash
-#source ~/.git-prompt.sh
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+# bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
 
 # colors
@@ -18,5 +16,12 @@ CYAN="\[\033[1;36m\]"
 GITINFO='$(__git_ps1 \[\033[34m\]\ [\%s]\[\033[0m\])'
 ICON="🚀  "
 PS1="$CYAN\W$RESET$GITINFO $ICON"
+
+# colorize!
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# aliases
+alias ll="ls -al"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
