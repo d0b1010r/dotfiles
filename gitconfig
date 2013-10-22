@@ -6,6 +6,11 @@
 	ui = auto
 [core]
 	excludesfile = ~/.gitignore
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	quotepath = false
 [push]
 	default = simple
 [alias]
@@ -18,7 +23,25 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(cyan)<%an>%Creset' --abbrev-commit
+	lgt = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(cyan)<%an>%Creset' --abbrev-commit --since=00:00 --author=david
 [user]
 	name = David Langer
 	email = mail@davidlanger.de
+
+[merge]
+	tool = kdiff3
+[mergetool]
+	keepBackup = true
+	prompt = false
+[diff]
+	tool = kdiff3
+[difftool]
+	prompt = false
+
+[difftool "kdiff3"]
+	path = /usr/local/bin/kdiff3
+	trustExitCode = false
+[mergetool "kdiff3"]
+	path = /usr/local/bin/kdiff3
+	trustExitCode = false
