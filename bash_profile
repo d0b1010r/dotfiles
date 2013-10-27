@@ -8,12 +8,11 @@ RESET="\[\033[0m\]"
 CYAN="\[\033[1;36m\]"
 
 # prompt
-GITINFO='$(__git_ps1 \[\033[34m\]\ \(\%s\)\[\033[0m\])'
 TIME='\[\e[01;30m\]\t'
 STATUS='`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`'
-GITINFO=' `[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo "\[\e[33m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] || echo "\[\e[32m\]"`$(__git_ps1 "(%s)\[\e[00m\]")'
+GITINFO='`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo " \[\e[33m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] || echo "\[\e[32m\]"`$(__git_ps1 " (%s)\[\e[00m\]")'
 ICON="🚀  "
-PS1="$STATUS $TIME $CYAN\W$RESET$GITINFO $ICON"
+PS1="$STATUS $TIME $CYAN\W$GITINFO $ICON$RESET"
 
 # colorize!
 export CLICOLOR=1
@@ -28,9 +27,6 @@ export EDITOR=vim
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
-
-# git-flow bash completion
-source ~/.git-flow-completion.bash
 
 # deploy
 function deploytojboss() { cp "$1" "$JBOSS_HOME/standalone/deployments"; }
