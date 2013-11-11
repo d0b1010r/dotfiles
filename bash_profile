@@ -12,7 +12,7 @@ TIME='\[\e[01;30m\]\t'
 STATUS='`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`'
 GITINFO='`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo " \[\e[33m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] || echo "\[\e[32m\]"`$(__git_ps1 " (%s)\[\e[00m\]")'
 ICON="🚀  "
-PS1="$STATUS $TIME $CYAN\W$GITINFO $ICON$RESET"
+PS1="$TIME $CYAN\W$GITINFO $ICON"
 
 # colorize!
 export CLICOLOR=1
