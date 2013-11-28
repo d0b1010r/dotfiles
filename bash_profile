@@ -94,10 +94,10 @@ if [ $? -eq 0 ]; then \
 		# @5 - Changes to working tree
 		echo "$(echo `git status` | grep "Changes to be committed" > /dev/null 2>&1; \
 		if [ "$?" -eq "0" ]; then \
-			# @4 - Clean repository - nothing to commit
-			echo "'$Yellow'"$(__git_ps1 " (%s)"); \
+			# @4 - Changes staged
+			echo "'$Yellow'"$(__git_ps1 " (%s^)"); \
 		else
-			echo "'$IRed'"$(__git_ps1 " {%s}"); \
+			echo "'$IRed'"$(__git_ps1 " (%s*)"); \
 		fi) '$Color_Off'"; \
 	fi) '$Color_Off'"; \
 else \
