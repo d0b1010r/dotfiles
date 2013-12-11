@@ -102,7 +102,7 @@ if [ $? -eq 0 ]; then \
 	fi) '$Color_Off'"; \
 else \
 	# @2 - Prompt when not in GIT repo
-	echo "'$Color_Off'"; \
+	echo "'$Color_Off' "; \
 fi)'
 
 ICON="🚀  "
