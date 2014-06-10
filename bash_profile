@@ -112,6 +112,9 @@ PS1="$TIME $Cyan\W$GITINFO$ICON"
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+# bash history
+HISTSIZE=10000
+
 # aliases
 alias ll="ls -al"
 
