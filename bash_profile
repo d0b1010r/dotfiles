@@ -135,3 +135,8 @@ function serve() { # via https://gist.github.com/1525217
 	(sleep 1 && open "http://${host}:${port}/")&
 	python -m SimpleHTTPServer "$port"
 }
+
+# myip
+function myip() { # via http://stackoverflow.com/questions/13322485/how-to-i-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x
+	ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+}
