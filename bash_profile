@@ -106,7 +106,7 @@ else \
 fi)'
 
 ICON="🚀  "
-PS1="$TIME $Cyan\W$GITINFO$ICON"
+PS1="$White\W$GITINFO$ICON"
 
 # colorize!
 export CLICOLOR=1
