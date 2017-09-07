@@ -45,3 +45,5 @@
 [mergetool "kdiff3"]
 	path = /usr/local/bin/kdiff3
 	trustExitCode = false
+[branch]
+	autosetuprebase = always
