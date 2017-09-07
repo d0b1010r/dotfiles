@@ -140,3 +140,5 @@ function serve() { # via https://gist.github.com/1525217
 function myip() { # via http://stackoverflow.com/questions/13322485/how-to-i-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x
 	ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
 }
+
+export PATH=$PATH:./node_modules/.bin
